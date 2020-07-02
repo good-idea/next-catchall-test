@@ -1,0 +1,25 @@
+{
+	"version": 2,
+	"builds": [
+		{
+			"src": "modules/next/package.json",
+			"use": "@vercel/next"
+		}
+	],
+	"routes": [
+		{
+			"src": "/static/(.*)",
+			"headers": { "cache-control": "s-maxage=31536000,immutable" },
+			"dest": "modules/next/static/$1"
+		},
+		{
+			"src": "/(.*)",
+			"dest": "modules/next/$1"
+		}
+	],
+	"build": {
+		"env": {
+			"API_URL": "/api"
+		}
+	}
+}

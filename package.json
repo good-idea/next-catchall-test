@@ -1,0 +1,14 @@
+{
+	"name": "next-test",
+	"version": "1.0.0",
+	"main": "index.js",
+	"license": "MIT",
+	"private": true,
+	"workspaces": [
+		"modules/*"
+	],
+	"devDependencies": {
+		"typescript": "^3.9.6",
+		"typesync": "^0.7.0"
+	}
+}
