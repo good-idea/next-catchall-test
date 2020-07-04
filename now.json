@@ -2,19 +2,19 @@
 	"version": 2,
 	"builds": [
 		{
-			"src": "modules/next/package.json",
-			"use": "@vercel/next"
+			"src": "modules/app/package.json",
+			"use": "@vercel/next@canary"
 		}
 	],
 	"routes": [
 		{
 			"src": "/static/(.*)",
 			"headers": { "cache-control": "s-maxage=31536000,immutable" },
-			"dest": "modules/next/static/$1"
+			"dest": "modules/app/static/$1"
 		},
 		{
 			"src": "/(.*)",
-			"dest": "modules/next/$1"
+			"dest": "modules/app/$1"
 		}
 	],
 	"build": {
